@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2eci7ef0xr1i"]
+
+[ext_resource type="Script" uid="uid://du327rf4ad1eu" path="res://src/maze/maze.gd" id="1_vkjo0"]
+[ext_resource type="Texture2D" uid="uid://btdofwv0g5t8s" path="res://icon.svg" id="2_inbv8"]
+
+[node name="Maze" type="Node2D" node_paths=PackedStringArray("maze_node", "sprite")]
+script = ExtResource("1_vkjo0")
+maze_node = NodePath("Walls")
+sprite = NodePath("Visuals/Sprite")
+
+[node name="Visuals" type="Node2D" parent="."]
+
+[node name="Sprite" type="Sprite2D" parent="Visuals"]
+texture = ExtResource("2_inbv8")
+
+[node name="Walls" type="Node2D" parent="."]

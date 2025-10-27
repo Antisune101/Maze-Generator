@@ -1,16 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://cdrsvew2713v1"]
+[gd_scene load_steps=2 format=3 uid="uid://cdrsvew2713v1"]
 
-[ext_resource type="Script" uid="uid://1afrkuyo6twm" path="res://src/scenes/main.gd" id="1_kkvs4"]
-[ext_resource type="Texture2D" uid="uid://btdofwv0g5t8s" path="res://icon.svg" id="2_rr2wm"]
+[ext_resource type="PackedScene" uid="uid://c2eci7ef0xr1i" path="res://src/maze/maze.tscn" id="2_rr2wm"]
 
-[node name="Main" type="Node2D" node_paths=PackedStringArray("maze_node", "sprite")]
-script = ExtResource("1_kkvs4")
-maze_node = NodePath("Maze")
-sprite = NodePath("Maze/Sprite")
+[node name="Main" type="Node2D"]
 
-[node name="Maze" type="Node2D" parent="."]
-
-[node name="Sprite" type="Sprite2D" parent="Maze"]
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("2_rr2wm")
-centered = false
+[node name="Maze" parent="." instance=ExtResource("2_rr2wm")]
